@@ -1,0 +1,1 @@
+scrapy crawl kanpou_title -t jsonlines -o result.json
