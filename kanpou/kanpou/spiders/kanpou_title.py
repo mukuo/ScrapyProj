@@ -34,7 +34,7 @@ class KanpouTitleSpider(scrapy.Spider):
     def parse_title(self, response):
         soup = BeautifulSoup(response.body,'lxml')
 
-        #官報の日付と号数
+        #官報の日付と号数（改行コード削除）
         paper = soup.find('p', {'class': 'date'}).text.replace('\r','').replace('\n','')
         #タイトル含むパーサ
         content = soup.find('div', {'class': 'contentsBox'})
